@@ -1,0 +1,2972 @@
+<!-- Adding a PDF button to mkdocs-material theme
+https://timvink.github.io/mkdocs-print-site-plugin/how-to/pdf_button.html#adding-a-pdf-button-to-mkdocs-material-theme -->
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="...">
+      
+      
+        <meta name="author" content="Envea Bidart">
+      
+      
+      
+        <link rel="prev" href="../data_consultation/">
+      
+      
+        <link rel="next" href="../calibration_profile/">
+      
+      <link rel="icon" href="../../assets/img/XR_32.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>FLD visualization - eWorkstation Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fld-visualization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="eWorkstation Manual" class="md-header__button md-logo" aria-label="eWorkstation Manual" data-md-component="logo">
+      
+  <img src="../../assets/img/XR_32.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eWorkstation Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FLD visualization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../1_introduction/read_before_use/" class="md-tabs__link">
+        Introduction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../3_dashboard/dashboard_intro/" class="md-tabs__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../data_intro/" class="md-tabs__link md-tabs__link--active">
+        Data management
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../5_config/config_intro/" class="md-tabs__link">
+        Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../6_admin/admin_intro/" class="md-tabs__link">
+        Administration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../print_page/" class="md-tabs__link">
+      Print Site
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="eWorkstation Manual" class="md-nav__button md-logo" aria-label="eWorkstation Manual" data-md-component="logo">
+      
+  <img src="../../assets/img/XR_32.png" alt="logo">
+
+    </a>
+    eWorkstation Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1_introduction/read_before_use/" class="md-nav__link">
+        Read before use
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_navigation/domains/" class="md-nav__link">
+        Domains
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          Navigation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Navigation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_navigation/common/" class="md-nav__link">
+        Common features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_navigation/top_menu/" class="md-nav__link">
+        Top menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_navigation/left_menu/" class="md-nav__link">
+        Left menu
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Dashboard
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Dashboard
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_dashboard/dashboard_intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_dashboard/sites_status/" class="md-nav__link">
+        Sites status
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_dashboard/pollutants_status/" class="md-nav__link">
+        Pollutants status
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Data management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Consultation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Consultation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_selection/" class="md-nav__link">
+        Data selection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_consultation/" class="md-nav__link">
+        Data consultation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        FLD visualization
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calibration_profile/" class="md-nav__link">
+        Calibration profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wind_rose/" class="md-nav__link">
+        Wind rose
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Validation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Validation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation_expertise_level/" class="md-nav__link">
+        Expertise level
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation_measure_lock/" class="md-nav__link">
+        Measure locking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation_toolbar/" class="md-nav__link">
+        Toolbar features
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/common_settings/" class="md-nav__link">
+        Common settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_sites/" class="md-nav__link">
+        Sites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_channels/" class="md-nav__link">
+        Channels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_equipments/" class="md-nav__link">
+        Equipments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_ref_data/" class="md-nav__link">
+        Reference data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_channel_groups/" class="md-nav__link">
+        Channel groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_samplers/" class="md-nav__link">
+        Samplers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          XR add-ons
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          XR add-ons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_aqi/" class="md-nav__link">
+        Air Quality Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_adval/" class="md-nav__link">
+        Adval
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          WEX, XR energy add-ons
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          WEX, XR energy add-ons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/config_reg_cfg/" class="md-nav__link">
+        Regulatory control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_config/test_periods/" class="md-nav__link">
+        Test periods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Administration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6_admin/admin_intro/" class="md-nav__link">
+        Administration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6_admin/users/" class="md-nav__link">
+        Users view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6_admin/roles/" class="md-nav__link">
+        Roles view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6_admin/workgroups/" class="md-nav__link">
+        Workgroups
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print_page/" class="md-nav__link">
+        Print Site
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+    <a href="../../print_page/" title="Print Site" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6v4h12m1 5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m-3 7H8v-5h8m3-6H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3Z"/></svg>
+    </a>
+
+
+
+                  
+
+
+<h1 id="fld-visualization">FLD visualization</h1>
+<p>The access to FLD visualization can be made if there are FLD in database which are visible with two icons, <img alt="" src="RackMultipart20230223-1-e3y3c1_html_c9191ca0f418ea54.png" /> (simple FLD ) or <img alt="" src="RackMultipart20230223-1-e3y3c1_html_8029adcfcaa6f713.png" /> (calibrations). As we saw in the last chapter, there are two ways to access this screen:</p>
+<ul>
+<li>Using the icon in the main tool bar</li>
+<li>Using the icon in the chart of the FLD overview</li>
+</ul>
+<p>The FLD visualization panel is similar to the data visualization panel, certain features have simply been removed because they were unnecessary for this view.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_3738e6d5acac234e.png" /></p>
+<p>Figure 23 – FLD visualization panel</p>
+<hr />
+<p>User Guide       eWorkstation                                        </p>
+<hr />
+<pre><code>               ![](media/image1.png){width="5.118110236220472in"   
+               height="3.5443536745406825in"}
+
+               **Version no. 1.6 of 20/05/2021**
+
+               Document Ref.:                                      **18-0344**
+
+               Number of pages:                                    **70**
+
+               Author:                                             **Dylan SEQUEIRA**
+</code></pre>
+<hr />
+<p>TRACEABILITY -- DOCUMENT VERSION</p>
+<hr />
+<p>DATE         VERSION    AUTHOR       PAGES Or §    MODIFICATIONS
+                                       concerned     </p>
+<hr />
+<p>14/08/2017   V1.0       DSE                        Document creation</p>
+<p>10/01/2018   V1.1       TMO                        Updates, edits</p>
+<p>25/05/2018   V1.2       TMO                        Updates, edits</p>
+<p>01/06/2018   V1.3       DSE                        Updates, edits</p>
+<p>21/09/2018   V1.4       DSE                        Updates, edits</p>
+<p>28/09/2018   V1.5       TMO                        Updates, edits</p>
+<p>20/05/2021   V1.6       MWA                        Updates, edits</p>
+<hr />
+<p>Table of Contents</p>
+<p><a href="#_Toc74301983">1. General information [6](#_Toc74301983)</a></p>
+<p><a href="#navigation">2. Navigation [7](#navigation)</a></p>
+<p><a href="#general-top-menu">2.1 General top menu [8](#general-top-menu)</a></p>
+<p><a href="#workgroup-top-list-menu-button">2.1.1 Workgroup top list menu button
+[8](#workgroup-top-list-menu-button)</a></p>
+<p><a href="#domain-button">2.1.2 Domain button [8](#domain-button)</a></p>
+<p><a href="#notifications-button">2.1.3 Notifications button
+[8](#notifications-button)</a></p>
+<p><a href="#user-button">2.1.4 User button [9](#user-button)</a></p>
+<p><a href="#general-menu-button">2.1.5 General menu button
+[10](#general-menu-button)</a></p>
+<p><a href="#general-left-menu">2.2 General left menu [11](#general-left-menu)</a></p>
+<p><a href="#common-domain-features">2.3 Common domain features
+[13](#common-domain-features)</a></p>
+<p><a href="#dashboard">3. Dashboard [14](#dashboard)</a></p>
+<p><a href="#menu">3.1 Menu [14](#menu)</a></p>
+<p><a href="#sites-view">3.2 Sites view [14](#sites-view)</a></p>
+<p><a href="#pollutants-view">3.3 Pollutants view [16](#pollutants-view)</a></p>
+<p><a href="#data-management">4. Data management [17](#data-management)</a></p>
+<p><a href="#menu-1">4.1 Menu [17](#menu-1)</a></p>
+<p><a href="#consultation-view">4.2 Consultation view [18](#consultation-view)</a></p>
+<p><a href="#data-selection">4.2.1 Data selection [18](#data-selection)</a></p>
+<p><a href="#data-consultation">4.2.2 Data consultation [20](#data-consultation)</a></p>
+<p><a href="#fld-visualization">4.2.3 Scan visualization [27](#fld-visualization)</a></p>
+<p><a href="#calibration-profile-visualization">4.2.4 Calibration profile visualization
+[28](#calibration-profile-visualization)</a></p>
+<p><a href="#wind-rose-view">4.3 Wind rose view [31](#wind-rose-view)</a></p>
+<p><a href="#validation-view">4.4 Validation view [33](#validation-view)</a></p>
+<p><a href="#expertise-level">4.4.1 Expertise level [33](#expertise-level)</a></p>
+<p><a href="#measure-locking">4.4.2 Measure locking [34](#measure-locking)</a></p>
+<p><a href="#toolbar-features">4.4.3 Toolbar features [35](#toolbar-features)</a></p>
+<p><a href="#aqi-view-xr">4.5 AQI view [XR] [36](#aqi-view-xr)</a></p>
+<p><a href="#configuration">5. Configuration [37](#configuration)</a></p>
+<p><a href="#menu-2">5.1 Menu [37](#menu-2)</a></p>
+<p><a href="#common-settings">5.2 Common settings [38](#common-settings)</a></p>
+<p><a href="#sites">5.2.1 Sites [38](#sites)</a></p>
+<p><a href="#channels">5.2.2 Channels [48](#channels)</a></p>
+<p><a href="#equipments">5.2.3 Equipments [54](#equipments)</a></p>
+<p><a href="#reference-data">5.2.4 Reference data [55](#reference-data)</a></p>
+<p><a href="#channel-groups">5.2.5 Channel groups [57](#channel-groups)</a></p>
+<p><a href="#samplers">5.2.6 Samplers [58](#samplers)</a></p>
+<p><a href="#xr-add-ons">5.3 XR add-ons [61](#xr-add-ons)</a></p>
+<p><a href="#adval">5.3.1 Adval [61](#adval)</a></p>
+<p><a href="#wex-xr-energy-add-ons">5.4 WEX /XR energy add-ons
+[65](#wex-xr-energy-add-ons)</a></p>
+<p><a href="#regulatory-control">5.4.1 Regulatory control
+[66](#regulatory-control)</a></p>
+<p><a href="#administration">6. Administration [67](#administration)</a></p>
+<p><a href="#menu-3">6.1 Menu [67](#menu-3)</a></p>
+<p><a href="#users-view">6.2 Users view [67](#users-view)</a></p>
+<p><a href="#roles-view">6.3 Roles view [69](#roles-view)</a></p>
+<p><strong>\
+</strong></p>
+<p>Read before use</p>
+<p><img alt="" src="media/image3.jpeg" />{width="2.45in"
+height="3.7909722222222224in"}<strong>Copyright</strong></p>
+<p>This manual contains proprietary information which is protected by
+copyright. All rights are reserved. No part of this document may be
+photocopied, repro-duced, or translated to another language without
+prior written consent of ENVEA iséo.</p>
+<p><strong>Product warranty and sales conditions</strong></p>
+<p>Please read these terms and conditions carefully. To complete the
+installation or the upgrade of the software in order to use it, you must
+be in accordance with every point of this contract, and accept all
+general conditions of use for this product. This agreement is a new
+contract which replace all concluded previous agreements. The
+installation and the use of this product (« SOFTWARE ») on your
+computers are specifically subject to full and entire acceptance of this
+license agreement (« LICENSE »). The license is a contract between you
+(natural or legal person), the end user of the SOFTWARE (« USER ») and
+the SOFTWARE publisher (« PUBLISHER »).</p>
+<p><strong>Limited Warranty</strong></p>
+<p>The PUBLISHER ensure that the physical support of the SOFTWARE is free
+from defect in materials and production for all normal usages. The
+warranty is valid for 12 months from the software delivery date. In case
+of a defect, the PUBLISHER will replace the defective equipment. The
+PUBLISHER guarantee that the SOFTWARE is in accordance with its
+documentation but gives no explicit guarantees about its proper
+functioning and in particular, that the SOFTWARE satisfy the performance
+requirements or that it will function without interruptions or failures.
+The PUBLISHER does not give other express or implied warranty under
+license.</p>
+<p><strong>Limitation of Liability</strong></p>
+<p>The publisher cannot be held responsible by the USER of the license in
+respect of any claim, for any loss, injury, direct or indirect damage or
+expense, which may result from the loss, the use or dissemination of
+data by the user.</p>
+<p><strong>Software License Agreement</strong></p>
+<p>The SOFTWARE is protected by copyright laws and international treaty
+provisions. No rights of ownership are granted to the licensed user,
+only a right of use is granted for the user. Through this license, the
+PUBLISHER grants the user a personal, non-transferable right of use. The
+USER must not make the SOFTWARE available to any person or entity other
+than its employees, who must use the software only as indicated below,
+must not modify the software or merge it with another program, reverse
+engineer, disassemble, decompile, or attempt to discover the source code
+of the SOFTWARE, translate or create derivative works based on the
+SOFTWARE.</p>
+<p>This document is the property of ENVEA Iséo and may not be sent to third
+parties without written authorization.</p>
+<p>This is a non-contractual document and may be modified without prior
+notice.</p>
+<h1 id="general-information">General information</h1>
+<p>The eWorkStation application is split in 4 specific domains:</p>
+<ul>
+<li>
+<p><strong>Dashboard</strong>: this domain allows a fast access of information
+    several states concerning monitoring sites and some pollutants.</p>
+</li>
+<li>
+<p><strong>Data management</strong>: in this domain, it is possible to consult data
+    about site's measures, wind roses... and carry out particular
+    operations like data validation.</p>
+</li>
+<li>
+<p><strong>Configuration</strong>: as its name suggests, this domain will permit to
+    configure (validation tool, acquisition systems configuration...).</p>
+</li>
+<li>
+<p><strong>Administration</strong>: this last domain let the users who have special
+    admin rights to manage system configuration (managing user and user
+    rights, database administration...)</p>
+</li>
+</ul>
+<h1 id="navigation">Navigation</h1>
+<p>Each domain of the application describes a common navigation interface
+which is located at the top banner.</p>
+<p><img alt="" src="media/image4.png" />{width="6.604166666666667in"
+height="0.5111111111111111in"}</p>
+<p>Figure 1 -- Top banner</p>
+<p>They also have a specific main menu placed on the left, with two common
+buttons on the bottom of the page. The main menu buttons may vary
+depending on the product type and/or the rights granted to the connected
+user.</p>
+<hr />
+<p><img alt="" src="media/image5.png" />{width="1.3803379265091864in"   <img alt="" src="media/image6.png" />{width="1.3938845144356955in"   <img alt="" src="media/image7.png" />{width="1.4104483814523185in"   <img alt="" src="media/image8.png" />{width="1.4081627296587926in"
+  height="3.620631014873141in"}                        height="3.6094258530183727in"}                       height="3.621619641294838in"}                        height="3.5970155293088366in"}</p>
+<hr />
+<hr />
+<p>Figure 2 --General left menu (dashboard, data management, configuration
+and administration domains)</p>
+<h2 id="general-top-menu">General top menu</h2>
+<p>The top banner of the application includes 5 buttons:</p>
+<h3 id="workgroup-top-list-menu-button">Workgroup top list menu button</h3>
+<hr />
+<p>On the left, the first button allows you to show or    <img alt="" src="media/image9.png" />{width="1.4003740157480316in"
+  hide the list menu of the currently configured         height="0.4624825021872266in"}
+  workgroups of login user.                              </p>
+<hr />
+<p>When the workgroup top list menu is opened, then shows <img alt="" src="media/image12.png" />{width="1.3222222222222222in"
+  list of all access (View) workgroups,                  height="1.9791666666666667in"}
+  <img alt="" src="media/image10.png" />{width="0.18338801399825022in" <br />
+  height="0.20006014873140857in"}configuration workgroup 
+  and                                                  <br />
+<img alt="" src="media/image11.png" />{width="0.20006014873140857in" <br />
+  height="0.20839566929133857in"}validation workgroup.   </p>
+<hr />
+<h3 id="domain-button">Domain button</h3>
+<hr />
+<p>The second button on the right provides                                                         <img alt="" src="media/image13.png" />{width="0.46893919510061244in"
+  access to all different domains of the                                                          height="0.46893919510061244in"}
+  application.                                                                                    </p>
+<hr />
+<p>When the user clicks on this button, a     <img alt="" src="media/image14.png" />{width="2.412263779527559in" <br />
+  menu opens and allows you to access each   height="2.3493471128608925in"}                     <br />
+  of 4 domains and then selected domain will                                                    <br />
+  open in a new tab in your web browser.                                                          </p>
+<hr />
+<h3 id="notifications-button">Notifications button</h3>
+<p>+---------------------------------------------------+------------------+
+| The notifications button indicate the user if     | <img alt="" src="|
+| notifications are available (information provided | media/image15.pn |
+| by the company to all users). When there is no    | g" />{width="0.4689 |
+| number displayed, the user has probably already   | 3919510061244in" |
+| seen the last notifications, or the user may not  | height="0.46893  |
+| have access to notifications (no internet         | 919510061244in"} |
+| connection).                                      |                  |
++===================================================+==================+
+|                                                   |                  |
++---------------------------------------------------+------------------+
+|   ---------------------------------------         |                  |
+| ------------------------------------------------- |                  |
+|   When new notifications are        ![]           |                  |
+| (media/image16.png){width="0.46893919510061244in" |                  |
+|   available, a num                                |                  |
+| ber is displayed  height="0.46893919510061244in"} |                  |
+|   showing the amount of                           |                  |
+|   notifications that the user had                 |                  |
+|   not seen yet.                                   |                  |
+|   --------------------------------- -----         |                  |
+| ------------------------------------------------- |                  |
+|                                                   |                  |
+|   ---------------------------------------         |                  |
+| ------------------------------------------------- |                  |
+|                                                   |                  |
+| The user just have to click on the button to      |                  |
+| display the set of available notifications. When  |                  |
+| the user clicks on the button, every              |                  |
+| notifications are considered as read.             |                  |
++---------------------------------------------------+------------------+</p>
+<h3 id="user-button">User button</h3>
+<p>+---------------------------------------------------+------------------+
+| The last button on the right, corresponds to the  | <img alt="" src="|
+| information of the user who is logged in.         | media/image17.pn |
+|                                                   | g" />{width="0.4689 |
+|                                                   | 3919510061244in" |
+|                                                   | height="0.46893  |
+|                                                   | 919510061244in"} |
++===================================================+==================+
+| One click on this button, shows a menu with some  |                  |
+| information about the current user and can also   |                  |
+| be used to change the time zone, language,        |                  |
+| password, default access workgroup which is used  |                  |
+| to display data in the application.               |                  |
++---------------------------------------------------+------------------+
+| !                                                 |                  |
+| <a href="media/image18.png"></a>{width="4.116246719160105in" |                  |
+| height="1.97996719160105in"}                      |                  |
++---------------------------------------------------+------------------+
+| The menu have a second button which can be used   |                  |
+| to logout the current user.                       |                  |
+|                                                   |                  |
+| To change this settings, you only have to click   |                  |
+| on<img alt="" src="media/image19.png" /> preferences button, it   |                  |
+| will open a <strong>\&lt;\&lt;User preferences>></strong> window   |                  |
+| where you can modify time zone, language,         |                  |
+| password, default access workgroup and confirm on |                  |
+| save button.                                      |                  |
+|                                                   |                  |
+| !                                                 |                  |
+| <a href="media/image20.png"></a>{width="6.111111111111111in" |                  |
+| height="3.763888888888889in"}                     |                  |
++---------------------------------------------------+------------------+</p>
+<p>Figure 3 - User preferences window</p>
+<h3 id="general-menu-button">General menu button</h3>
+<hr />
+<p>On the left, this button allows you to show or hide <img alt="" src="media/image21.png" />{width="0.46893919510061244in"
+  the general menu of the currently opened domain.    height="0.46893919510061244in"}</p>
+<hr />
+<p>When the general menu is opened, button's colors    <img alt="" src="media/image22.png" />{width="0.46893919510061244in"
+  are inverted.                                       height="0.4585181539807524in"}</p>
+<hr />
+<h2 id="general-left-menu">General left menu</h2>
+<p>Each domain also possesses its own menu. This one allows access to every
+function of the open domain. These menus will be described in the
+following chapters.</p>
+<p>In addition to specific functions, the left menu presents two buttons
+that are common to all domains.</p>
+<p>+------------------------------+---------------------------------------+
+| The first button             | <img alt="" src="media/imag                        |
+| **\&lt;\&lt;Requests>>** shows   | e23.png" />{width="3.8896150481189853in" |
+| all transactions made        | height="1.7261373578302712in"}        |
+| between the eWorkstation and |                                       |
+| the server during the        |                                       |
+| current session.             |                                       |
+|                              |                                       |
+| The request sub menu buttons |                                       |
+| may vary depending on the    |                                       |
+| product type and/or the      |                                       |
+| rights granted to the        |                                       |
+| connected user               |                                       |
+| (example:Anticipated         |                                       |
+| acquisition)                 |                                       |
++==============================+=======================================+
++------------------------------+---------------------------------------+</p>
+<p><img alt="" src="media/image24.png" />{width="6.300694444444445in"
+height="1.4833245844269467in"}</p>
+<p>Figure 4 - Preview of transactions between the eWorkstation and the
+server</p>
+<p>+--------------------------------------+-------------------------------+
+| The second button                    | <img alt="" src="media/image25.png" />        |
+| <strong>\&lt;\&lt;Informations>></strong> allows to   | {width="2.0737543744531934in" |
+| display information about the        | he                            |
+| product and the user license.        | ight="0.46893919510061244in"} |
++======================================+===============================+
+| It can also enables access to the    |                               |
+| product documentation (user manual   |                               |
+| and history of changes).             |                               |
+|                                      |                               |
+| <img alt="" src="media/imag                       |                               |
+| e26.png" />{width="6.263674540682414in" |                               |
+| height="4.061521216097987in"}        |                               |
+|                                      |                               |
+| Figure 5 - Product information       |                               |
+| window                               |                               |
++--------------------------------------+-------------------------------+</p>
+<h2 id="common-domain-features">Common domain features</h2>
+<p><strong>[Management of tabs:]{.underline}</strong></p>
+<p>When specific domain menus are clicked, corresponding tabs are opened in
+the top banner.</p>
+<p>We can close these tabs using the cross in the top-right corner of the
+tab, or by clicking the tab with the middle click (wheel of the mouse).\
+There are two types of tabs:</p>
+<ul>
+<li>
+<p>Single tabs, only one tab of this menu can be open in the
+    top-banner.</p>
+</li>
+<li>
+<p>Multiple tabs, we can open several tabs (with individual number)
+    when clicking on the corresponding menu.</p>
+</li>
+</ul>
+<p>When a certain amount of tab is reached, two arrows (left and right)
+appears in the top-banner to navigate through all tabs (you can use the
+mouse wheel too).</p>
+<p><strong>[Windows / banners Management]{.underline}</strong></p>
+<p>When browsing different domains, you can notice that some parts
+(components) have an arrow in the header-panel (close the title of the
+part).</p>
+<p>This means that this part is collapsible (can be reduced) to hide or
+show something and have a greater overall visibility.</p>
+<hr />
+<p><img alt="" src="media/image27.png" />{width="2.8659142607174104in"      <img alt="" src="media/image28.png" />{width="3.184671916010499in"
+  height="2.7927996500437446in"}                           height="2.742623578302712in"}</p>
+<hr />
+<hr />
+<p>Figure 6 - Window management</p>
+<h1 id="dashboard">Dashboard</h1>
+<h2 id="menu">Menu</h2>
+<p>The dashboard menu has two buttons:</p>
+<p>+---------------------------------------------+------------------------+
+| -   <strong>Sites</strong>: displays a map associated    | <img alt="" src="med                |
+|     with a table gathering all monitoring   | ia/image29.png" />{width= |
+|     sites and states information.           | "2.0737543744531934in" |
+|                                             | height="0              |
+|                                             | .46893919510061244in"} |
++=============================================+========================+
+| -   <strong>Pollutants</strong>: in the same way, this   | <img alt="" src="med                |
+|     button displays a map with pollutants   | ia/image30.png" />{width= |
+|     states related to configured            | "2.0737543744531934in" |
+|     measurement sites.                      | height="0              |
+|                                             | .46893919510061244in"} |
++---------------------------------------------+------------------------+</p>
+<h2 id="sites-view">Sites view</h2>
+<p>The « <strong>sites</strong> » view shows us a map with the location and the state of
+every active monitoring site configured in the server. When this view is
+loaded, it focuses on all sites to have an overall view.</p>
+<p><img alt="" src="media/image31.png" />{width="6.496527777777778in"
+height="3.057638888888889in"}</p>
+<p>Figure 7 -- Visualization of monitoring sites</p>
+<p>The left table lists all sites and gives 3 state indications:</p>
+<ul>
+<li>
+<p>Communication state;</p>
+</li>
+<li>
+<p>Current alarm;</p>
+</li>
+<li>
+<p>Current defect.</p>
+</li>
+</ul>
+<p>If the state column is empty, it means that there are none of these 3
+issues listed above for the site. Otherwise the issues will be
+associated with various icons (in the legend of the map).</p>
+<p>The icons are as follow:</p>
+<hr />
+<p><strong>Only one site</strong>                                                                     <strong>Several sites (number indicated)</strong>                  </p>
+<hr />
+<p><img alt="" src="media/image32.png" />{width="0.3126268591426072in"   No problem                      <img alt="" src="media/image33.png" />{width="0.3647309711286089in"   No problem
+  height="0.3647309711286089in"}                                                        height="0.3647309711286089in"}                        </p>
+<p><img alt="" src="media/image34.png" />{width="0.3126268591426072in"   Defect presence                 <img alt="" src="media/image35.png" />{width="0.3647309711286089in"   At least 1 active defect
+  height="0.3647309711286089in"}                                                        height="0.3647309711286089in"}                        </p>
+<p><img alt="" src="media/image36.png" />{width="0.3126268591426072in"   Alarm presence                  <img alt="" src="media/image37.png" />{width="0.3647309711286089in"   At least 1 active alarm
+  height="0.3647309711286089in"}                                                        height="0.3647309711286089in"}                        </p>
+<p><img alt="" src="media/image38.png" />{width="0.3126268591426072in"   Communication issue             <img alt="" src="media/image39.png" />{width="0.3647309711286089in"   At least 1 communication
+  height="0.3647309711286089in"}                                                        height="0.3647309711286089in"}                        error</p>
+<hr />
+<p>If two sites are too close to be distinguished on the map (with the
+actual zoom), specific icons indicates the number of sites in the area.</p>
+<p>When a site is clicked on the left table, the map focus on the matching
+site. You can have more information about this site by clicking on the
+related icon.</p>
+<p><img alt="" src="media/image40.png" />{width="4.921259842519685in"
+height="2.8554352580927382in"}</p>
+<p>Figure 8 - Site details</p>
+<p>It contains some information like:</p>
+<ul>
+<li>
+<p>The identification of the site (number, tag, site type);</p>
+</li>
+<li>
+<p>Address;</p>
+</li>
+<li>
+<p>General state;</p>
+</li>
+<li>
+<p>Date of the last acquired data;</p>
+</li>
+<li>
+<p>...</p>
+</li>
+</ul>
+<h2 id="pollutants-view">Pollutants view</h2>
+<p>The « <strong>pollutants</strong> » view lets you visualize the state of each
+pollutant (linked to monitoring sites configured in the server) on a
+map.</p>
+<p><img alt="" src="media/image41.png" />{width="6.496527777777778in"
+height="3.057638888888889in"}</p>
+<p>Figure 9 - Visualization of pollutants</p>
+<p>The left table lists every existing types of pollutants (in the list of
+configured sites).</p>
+<p>When a pollutant is selected in the table, all the associated measures
+are shown in the map.</p>
+<p>If a scale is defined for the measure, this one is displayed in the
+bottom-right corner of the map and the measure's icon has the color
+associated with the actual value. If there is no scale defined, the
+default color of the icon is grey.</p>
+<p>In the same way as for sites, it is possible to see more information
+about a measure by clicking its icon.</p>
+<p>+----------------------------------+-----------------------------------+
+| These details are then shown:    | <img alt="" src="media/image42                 |
+|                                  | .png" />{width="2.250909886264217in" |
+| -   Information about the site   | height="1.6986034558180227in"}    |
+|     which integrate the measure; |                                   |
+|                                  | Figure 10 - Focus on a pollutant  |
+| -   Name of the measure;         |                                   |
+|                                  |                                   |
+| -   Exact value of the current   |                                   |
+|     data;                        |                                   |
+|                                  |                                   |
+| -   Date of data acquisition.    |                                   |
++==================================+===================================+
++----------------------------------+-----------------------------------+</p>
+<h1 id="data-management">Data management</h1>
+<h2 id="menu_1">Menu</h2>
+<p>The Data management menu possesses six buttons:</p>
+<p>+------------------------------------+---------------------------------+
+| -   <strong>Consultation</strong>: allows to    | <img alt="" src="media/image43.pn            |
+|     consult data of each measures  | g" />{width="2.0737543744531934in" |
+|     of monitoring sites.           | height="0.46893919510061244in"} |
++====================================+=================================+
+| -   <strong>Wind rose</strong>: it is possible  | <img alt="" src="media/image44.pn            |
+|     to plot the wind rose of a     | g" />{width="2.0737543744531934in" |
+|     monitoring sites.              | height="0.46893919510061244in"} |
+|                                    |                                 |
+| -   <strong>Validation</strong>: access the     | <img alt="" src="media/image45.png" />          |
+|     data validation interface      |                                 |
+|     (close to consultation         | <img alt="" src="media/image46.pn            |
+|     interface" />, for technical and  | g){width="2.0737543744531934in" |
+|     environmental validation.      | height="0.46893919510061244in"} |
+|                                    |                                 |
+| -   <strong>AQI</strong>: shows us every        |                                 |
+|     measures depending on the Air  |                                 |
+|     Quality Index we want.         |                                 |
++------------------------------------+---------------------------------+
+| -   <strong>Calibration follow-up:</strong>     | <img alt="" src="media/image47.png" />          |
+|     allow us to consult calibrated |                                 |
+|     data of monitoring measures.   |                                 |
++------------------------------------+---------------------------------+
+| -   <strong>Reports:</strong> allow us to       | <img alt="" src="media/image48.pn            |
+|     configure model and quick      | g" />{width="2.8258431758530183in" |
+|     reports and possible to        | height="0.566836176727909in"}   |
+|     generate and display the       |                                 |
+|     results. Here possible to      |                                 |
+|     export reports in excel, pdf,  |                                 |
+|     csv, html format.              |                                 |
++------------------------------------+---------------------------------+</p>
+<h2 id="consultation-view">Consultation view</h2>
+<p>The « <strong>consultation</strong> » view allows viewing all data acquired on every
+monitoring sites.</p>
+<p>First of all, it is necessary to select data that we need to consult.
+It's the first screen displayed in the consultation view.</p>
+<p><img alt="" src="media/image49.png" />{width="6.300694444444445in"
+height="3.1479166666666667in"}</p>
+<p>Figure 11 -- Data selection screen Data selection</p>
+<h3 id="data-selection">Data selection</h3>
+<p>The data selection has two parts:</p>
+<ul>
+<li>
+<p>The left part gives access to several modes of data selection
+    depending on user needs.</p>
+</li>
+<li>
+<p>The right part dynamically displays details of measures
+    corresponding to the list of selected measures (on the left part).</p>
+</li>
+</ul>
+<h4 id="selection-modes">Selection modes</h4>
+<p>4 different selection modes can be chosen from the selection menu:</p>
+<ul>
+<li>
+<p>From measure networks, here possible to select catgorywise measure
+    network;</p>
+</li>
+<li>
+<p>From searching by filters (department, commune, site, equipment,
+    ...);</p>
+</li>
+<li>
+<p>From global searching (label or measure tags...);</p>
+</li>
+<li>
+<p>From last selections history.</p>
+</li>
+</ul>
+<hr />
+<p><img alt="" src="media/image50.png" />{width="1.5816087051618548in"   <img alt="" src="media/image51.png" />{width="1.7250863954505686in"   <img alt="" src="media/image52.png" />{width="1.6969695975503063in"   <img alt="" src="media/image53.png" />{width="1.7189588801399824in"
+  height="2.8890715223097114in"}                        height="2.896182195975503in"}                         height="2.9721817585301835in"}                        height="2.958159448818898in"}</p>
+<hr />
+<hr />
+<p>Figure 12 -- Different data selection modes</p>
+<p>From any modes, the detail about corresponding measures will be directly
+shown on the right part.</p>
+<h4 id="selected-measure-details">Selected measure details</h4>
+<p>Details about selected measures are displayed in the right part. In this
+grid, the user can exclude invalid measures using the top left check
+box. The number of selected measures is displayed in the top right
+corner.</p>
+<p>Once the measures are shown in the grid, the user can remove unwanted
+measures one by one. This can be done using the button (cross) on the
+right of this measure.</p>
+<p>Finally, the user can empty the all selection by clicking in the header
+of the last column of the grid (trash can).</p>
+<p><img alt="" src="media/image54.png" />{width="6.496527777777778in"
+height="4.2659722222222225in"}</p>
+<p>Figure 13 -- Selected measures details visualization</p>
+<p>Once the selection is made, it is possible to enter consultation dates
+with the date-picker at the bottom of the screen (the last two days are
+selected by default). And it is also possible to change the data type
+that we want to load for data consultation (base data, or aggregated
+data).</p>
+<p>To validate the selection and switch to selection mode, all you have to
+do is click on the « OK » button.</p>
+<p>On the first selection, the « Cancel » button is not available. This
+button become accessible if a consultation is in progress and when the
+user wants to modify the selection. At this point, the « Cancel » button
+allows us to switch back to the data consultation mode without doing a
+new selection.</p>
+<p>Before data consultation, we must go through data selection screen.</p>
+<h3 id="data-consultation">Data consultation</h3>
+<p>The data is separated in three parts:</p>
+<ul>
+<li>
+<p>The left part gives the list of measures currently loaded in
+    consultation</p>
+</li>
+<li>
+<p>The main part contains charts and grids for data visualization</p>
+</li>
+<li>
+<p>The right part displays several additional details (preview of FLD ,
+    list of events, and list of quality codes...)</p>
+</li>
+</ul>
+<p><img alt="" src="media/image55.png" />{width="6.300694444444445in"
+height="3.1479166666666667in"}</p>
+<p>Figure 14 -- Data consultation screen</p>
+<h4 id="list-of-measures">List of measures</h4>
+<p>Selected measures (checked) in this list are displayed instantly in the
+grid and the consultation chart.</p>
+<p><img alt="" src="media/image56.png" />{width="1.7125984251968505in"
+height="2.740158573928259in"}</p>
+<p>Figure 15 - List of measures in consultation</p>
+<p>By default, the first four measures will be selected. Sorting can be
+modified with the button in the top tool bar.</p>
+<p>Using the bottom tool bar, two actions are possible:</p>
+<ul>
+<li>
+<p><strong>Modify selection:</strong> this button allows to go back to the data
+    selection screen in order to modify in progress consultation</p>
+</li>
+<li>
+<p><strong>Refresh:</strong> data of the list of measures currently in consultation
+    will be reloaded (to display newly acquired data for example)</p>
+</li>
+</ul>
+<h4 id="grids-and-charts">Grids and charts</h4>
+<p>When the user select some data he wants to view, these data are
+displayed in a table and in charts at the same time.</p>
+<p><img alt="" src="media/image57.png" />{width="6.0256944444444445in"
+height="4.645658355205599in"}</p>
+<p>Figure 16 - Tableau et courbes de visualisation des données</p>
+<p>The table shows data values and data quality codes (details about
+quality codes will be described in the next section). The time
+navigation is synchronized between the table and the chart.</p>
+<p>There is a possibility to see details about data from the chart by
+passing the mouse over the curves.</p>
+<p><img alt="" src="media/image58.png" />{width="2.3622047244094486in"
+height="1.919291338582677in"}</p>
+<p>Figure 17 -- Details on curve points</p>
+<p>The data visualization panel has 3 distinct tool bars. Each of them are
+describes below.</p>
+<p><strong>The main tool bar:</strong> located at the top, this bar allows to perform
+global actions on the data display panel.</p>
+<p><img alt="" src="media/image59.png" />{width="6.298700787401575in"
+height="0.23333333333333334in"}</p>
+<p>Figure 18 -- Main tool bar</p>
+<p>List of features:</p>
+<hr />
+<p>Switch display to horizontal or vertical mode for the  <img alt="" src="media/image60.png" />
+  grid and the chart                                     </p>
+<hr />
+<p>Show or hide data consultation grid                    <img alt="" src="media/image61.png" /></p>
+<p>Show or hide data consultation chart                   <img alt="" src="media/image62.png" /></p>
+<p>Access to detailed FLD visualization (see FLD          <img alt="" src="media/image63.png" />
+  visualization chapter)                                 </p>
+<p>Access to calibration profiles visualization (see      <img alt="" src="media/image64.png" />
+  calibration visualization chapter)                     </p>
+<p>Load new data for the current selection using time     <img alt="" src="media/image65.png" />
+  navigation. This requires to select the time scale   <br />
+  (daily by default) and click on the « next » button  <br />
+  (to navigate in the future) or « previous » (to go   <br />
+  back in the past).                                     </p>
+<p>Pull primary data (FLD) for selected measures and      <img alt="" src="media/image66.png" />
+  period.                                                </p>
+<p>Access to manage comments. Open validation tab to      <img alt="" src="media/image67.png" />
+  create new comments, this requires to select measures<br />
+  and period to be comment. Saved comments can be      <br />
+  visualize in validation and consultation tab-details <br />
+  panel.                                                 </p>
+<p>Make data exports and prints                           <img alt="" src="media/image68.png" /></p>
+<hr />
+<p><strong>Data table tool bar:</strong> on the top of the table, it gathers specific
+features of the table.</p>
+<p><img alt="" src="media/image69.png" />{width="6.292361111111111in"
+height="0.3053477690288714in"}</p>
+<p>Figure 19 -- Data table tool bar</p>
+<p>List of features:</p>
+<hr />
+<p>Choice of visualized aggregation type        <img alt="" src="media/image70.png" /></p>
+<hr />
+<p>Copy the content of the current selection    <img alt="" src="media/image71.png" />{width="0.25010061242344706in"
+  (csv)                                        height="0.25010061242344706in"}</p>
+<p>Settings of displayed data in the table      <img alt="" src="media/image72.png" />{width="0.46893919510061244in"
+                                               height="0.25010061242344706in"}</p>
+<hr />
+<p><strong>[Tip]{.underline}</strong>: All columns can be moved by moving the header
+(measure name) of each column (drag &amp; drop).</p>
+<p><strong>Data chart tool bar:</strong> located at the bottom of the charts, it permits
+to use some specific features.</p>
+<p><img alt="" src="media/image73.png" />{width="6.300694444444445in"
+height="0.2881944444444444in"}</p>
+<p>Figure 20 -- Data chart tool bar</p>
+<p>List of features:</p>
+<p>+---------------------------------------------------+------------------+
+| Choice of visualized aggregation type             | <img alt="" src="me           |
+|                                                   | dia/image74.png" /> |
++===================================================+==================+
+| Display mode for chart axis                       | <img alt="" src="me           |
+|                                                   | dia/image75.png" /> |
++---------------------------------------------------+------------------+
+| Scale of display for the chart                    | <img alt="" src="me           |
+|                                                   | dia/image76.png" /> |
++---------------------------------------------------+------------------+
+| List of predefined zooms for data visualization   | <img alt="" src="me           |
+| (depends on the range of loaded measures)         | dia/image77.png" /> |
++---------------------------------------------------+------------------+
+| Move horizontally the grey rectangle illustrating | <img alt="" src="me           |
+| the visible part of the grid.                     | dia/image78.png" /> |
++---------------------------------------------------+------------------+
+| Zoom In and Zoom Out.                             | <img alt="" src="me           |
+|                                                   | dia/image79.png" /> |
++---------------------------------------------------+------------------+
+| Grid cells selection on chart selection.          | <img alt="" src="me           |
+|                                                   | dia/image80.png" /> |
++---------------------------------------------------+------------------+
+| Choice of display valid data, valid and           | <img alt="" src="me           |
+| calibrated data and all data.                     | dia/image81.png" /> |
++---------------------------------------------------+------------------+
+| Settings of displayed data in charts:             | <img alt="" src="me           |
+|                                                   | dia/image82.png" /> |
+| -   Show or hide invalid points on the curves     |                  |
++---------------------------------------------------+------------------+</p>
+<h4 id="details">Details</h4>
+<p>The « Details » panel enables to show additional informations. It is
+composed of two sections each divided in different tabs:</p>
+<ul>
+<li>
+<p>The upper section has three tabs:</p>
+<ul>
+<li>
+<p>« <strong>Events</strong> » tab (by default): displays the list of events
+    linked to selected cells in the table. It is possible to filter
+    these displayed events with the « Origin » drop-down menu. A
+    detailed table about events can also be displayed by clicking on
+    the number of each event categories.</p>
+</li>
+<li>
+<p>« <strong>Manage comments</strong> » tab: displays the list of comments
+    linked to selected cells in the table. It is possible to read,
+    edit and delete these displayed comments with the actions menu.
+    A detailed table about comments can also be displayed by
+    clicking on the number of each event categories. You can select
+    cells to be comment and click on
+    <img alt="" src="media/image83.png" />{width="0.27800415573053366in"
+    height="0.2959394138232721in"} button from toolbar then below
+    window will appear where you can add title and description and
+    save it.</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><img alt="" src="media/image84.png" />{width="4.41785542432196in"
+height="3.0493613298337707in"}</p>
+</blockquote>
+<p>Figure 21-- Manage comments</p>
+<ul>
+<li>« <strong>Quality codes</strong> » tab: shows the list of configured quality
+    codes. It permits to see the correlation between quality code and
+    its color, and to know the validity of each codes.</li>
+</ul>
+<pre><code>&lt;!-- --&gt;
+</code></pre>
+<ul>
+<li>
+<p>The lower section has only two tabs:</p>
+<ul>
+<li>
+<p><strong>« Primary data (FLD) »</strong> tab: permits to see a FLD overview
+    for the selected cells. Cells which can display FLD are visible
+    with two icons,
+    <img alt="" src="media/image85.png" />{width="0.13547134733158356in"
+    height="0.12505030621172353in"} (simple FLD) and
+    <img alt="" src="media/image86.png" />{width="0.14589238845144356in"
+    height="0.12505030621172353in"} (calibrations). If the selection
+    has no FLD data, then the overview will be empty. If FLD are
+    visible, you can access to the FLD visualization screen by
+    clicking on the top right icon of the FLD chart:
+    <img alt="" src="media/image87.png" />{width="0.2709426946631671in"
+    height="0.21883858267716536in"}</p>
+</li>
+<li>
+<p><strong>« Mini Wind rose »</strong> tab: permits to plot wind rose for the
+    selected cells. Wind parameters nearest to selected measures can
+    be select automatically according to nearest latitude and
+    longitude. Site unlock
+    icon<img alt="" src="media/image88.png" />{width="1.538888888888889in"
+    height="0.17847222222222223in"} use to select site for wind rose
+    calculations. you can access to the wind rose visualization
+    screen by clicking on the top right icon of the FLD chart:
+    <img alt="" src="media/image87.png" />{width="0.2709426946631671in"
+    height="0.21883858267716536in"}</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><img alt="" src="media/image89.png" />{width="1.8893919510061243in"   <img alt="" src="media/image90.png" />{width="1.874397419072616in"   <img alt="" src="media/image91.png" />{width="1.9470100612423447in"
+  height="5.097423447069116in"}                         height="5.0976935695538055in"}                       height="5.18538167104112in"}</p>
+<hr />
+<hr />
+<p>Figure 22 -- Details panel visualization</p>
+<h3 id="fld-visualization_1">FLD visualization</h3>
+<p>The access to FLD visualization can be made if there are FLD in database
+which are visible with two icons,
+<img alt="" src="media/image85.png" />{width="0.13547134733158356in"
+height="0.12505030621172353in"} (simple FLD ) or
+<img alt="" src="media/image86.png" />{width="0.14589238845144356in"
+height="0.12505030621172353in"} (calibrations). As we saw in the last
+chapter, there are two ways to access this screen:</p>
+<ul>
+<li>
+<p>Using the icon in the main tool bar</p>
+</li>
+<li>
+<p>Using the icon in the chart of the FLD overview</p>
+</li>
+</ul>
+<p>The FLD visualization panel is similar to the data visualization panel,
+certain features have simply been removed because they were unnecessary
+for this view.</p>
+<p><img alt="" height="5.06875in" src="media/image92.png" width="6.300694444444445in" /></p>
+<p>Figure 23 -- FLD visualization panel</p>
+<h3 id="calibration-profile-visualization">Calibration profile visualization</h3>
+<p>We can access to calibration visualization if calibrations were made on
+these measures, shown with the
+icon<img alt="" src="media/image86.png" />{width="0.14589238845144356in"
+height="0.12505030621172353in"}. You can only access to this screen from
+the main tool bar.</p>
+<p>The calibration profile visualization panel has two parts.</p>
+<p><img alt="" src="media/image93.png" />{width="6.300694444444445in"
+height="3.25625in"}Figure 24 -- Calibration profile visualization panel</p>
+<h4 id="calibration-data">Calibration data</h4>
+<p>When you are viewing calibration profiles, charts and tables are
+identical as a regular FLD consultation. The main difference lies in the
+chart, where the calibration profile corresponding to the calibration
+settings is shown.</p>
+<p>We can clearly see simultaneously the calibration profile and recorded
+data.</p>
+<p>Note that data outside the calibration profile is marked in red. And
+passing the mouse over the chart\'s points will display some information
+about the calibration.</p>
+<p><img alt="" src="media/image94.png" />{width="6.298611111111111in"
+height="3.7465277777777777in"}</p>
+<p>Figure 25 -- Calibration data visualization</p>
+<p>On this view, two other functionalities are available in the tool bar.
+These features are described below:</p>
+<hr />
+<p>Validate or invalidate a calibration result: with      <img alt="" src="media/image95.png" />{width="0.6666666666666666in"
+  these two buttons, the user can validate (valid        height="0.28125in"}
+  calibration) or invalidate (invalid calibration) a   <br />
+  calibration result.                                    </p>
+<hr />
+<p>Time navigation: it is possible to go to the next or   <img alt="" src="media/image96.png" />{width="1.4495275590551182in"
+  previous calibration with these two arrows. When       height="0.2713145231846019in"}
+  navigating, if a calibration result is found, a new  <br />
+  tab will be opened with this calibration data.         </p>
+<hr />
+<h4 id="calibration-result">Calibration result</h4>
+<p>Calibration results are data obtained after each calibration phase. A
+new tab is available in the « Detail » panel on the right side of the
+screen. In this screen, all calibration phases can be seen and the
+corresponding results.</p>
+<p>We can note that validated data are displayed with a green color, and
+invalid data in red.</p>
+<p><img alt="" src="media/image97.png" />{width="2.5317333770778654in"
+height="6.278663604549432in"}</p>
+<p>Figure 26 -- Calibration results visualization</p>
+<p>Calibration results can be split in 3 categories:</p>
+<ul>
+<li>
+<p>General results: data specific to calibrations</p>
+</li>
+<li>
+<p>Quality criteria: statistical data related to recorded values during
+    calibrations</p>
+</li>
+<li>
+<p>Multiplex channels (only for equipment with multiplex channels) :
+    technical data of the equipment</p>
+</li>
+</ul>
+<h2 id="wind-rose-view">Wind rose view</h2>
+<p>The « <strong>Wind rose</strong> » view permits to display a wind rose or a pollutant
+rose using meteorological data.</p>
+<p>Browsing the left part of this interface, you can change some analysis
+settings or display settings.</p>
+<p>We can display either a <strong>Wind rose</strong>, or a <strong>Pollutant rose</strong> with the
+possibility to change some parameters like the wind direction, the
+analysis period, the number of direction classes...</p>
+<p>There are two display modes: the wind rose and the corresponding data
+table.</p>
+<p>The data table represents the percentages of wind in each wind direction
+classes and wind speed classes (for wind rose) or concentration average
+(for pollutant rose).</p>
+<p>For both display modes, there is a progress bar at the bottom of the
+screen which can be used to navigate through time with the possibility
+to « play the film » in order to see the data changed over time in a
+chronological and automatic way.</p>
+<p><img alt="" src="media/image98.png" />{width="6.30790791776028in"
+height="3.7835476815398077in"}</p>
+<p>Figure 27-- Main view for wind rose visualization</p>
+<p><img alt="" src="media/image99.png" />{width="4.364153543307086in"
+height="4.033403324584427in"}</p>
+<p>Figure 28 -- Data table of a wind rose</p>
+<p>The class model management is made using the button
+<img alt="" src="media/image100.png" />{width="0.25010061242344706in"
+height="0.25010061242344706in"} located in the « Class model » part in
+the Data selection section. A new tab is created with all settings
+related to wind classes (create, edit or delete classes).</p>
+<p><img alt="" src="media/image101.png" />{width="4.371514654418197in"
+height="3.51670384951881in"}</p>
+<p>Figure 229 -- Wind classes management window</p>
+<p>It is here that speed thresholds will be set up, for a better analysis
+of the wind roses.</p>
+<h2 id="validation-view">Validation view</h2>
+<p>The « <strong>Validation</strong> » view looks like the <strong>Consultation</strong> view, both
+share the same structure.</p>
+<p>However, there are some differences detailed below.</p>
+<h3 id="expertise-level">Expertise level</h3>
+<p>When selecting data, we can choose the level of expertise we want to
+achieve.</p>
+<p><img alt="" src="media/image102.png" />{width="2.3204746281714788in"
+height="4.146422790901138in"}</p>
+<p>Figure 30 -- Expertise level choice on validation</p>
+<p>There are 3 possible choices:</p>
+<ul>
+<li>
+<p>Technical validation (chosen by default);</p>
+</li>
+<li>
+<p>Environmental validation ;</p>
+</li>
+<li>
+<p>Environmental validation with technical pre-validation.</p>
+</li>
+</ul>
+<p><strong>[Notes]{.underline}</strong>:\
+The date fields are filled automatically based on validation dates
+(technical or environmental).</p>
+<h3 id="measure-locking">Measure locking</h3>
+<p>When a group of measures (or network) is selected, the list of
+corresponding measures is displayed and we can « <strong>lock</strong> » every
+measures (measures which are available in
+<img alt="" src="media/image103.png" />{width="0.26568569553805776in"
+height="0.2077930883639545in"}validation workgroup) using the checkbox
+in the right side of the label.</p>
+<p>Locking a measure is required if we want to add changes (edit value,
+change quality code...). This ensures that the data can be only modified
+by one person.</p>
+<p><img alt="" src="media/image104.png" />{width="2.1091108923884514in"
+height="3.937007874015748in"}</p>
+<p>Figure 31 -- View of measure list during validation</p>
+<p>Some measures may be already locked by someone else (<strong>greyed</strong>
+<strong>checkbox</strong>), you will need to wait until the other user finish his
+changes/validations and « <strong>unlock</strong> » this measure.</p>
+<p><strong>[Note]{.underline}</strong>:\
+In validation, a column appears in the measures list informing the user
+if a measure is (or if it is not) part of an ADVAL (Automatic
+Validation) rule with these icons:
+<img alt="" src="media/image105.png" />{width="0.2605216535433071in"
+height="0.25010061242344706in"}and<img alt="" src="media/image106.png" />{width="0.2605216535433071in"
+height="0.25010061242344706in"}.</p>
+<p>To change a value, you have to « <strong>Double click</strong> » in a cell, then you
+can edit it and after that a new « pop-up » window will ask you to add a
+comment to this modification.</p>
+<p><img alt="" src="media/image107.png" />{width="5.118110236220472in"
+height="2.9242432195975505in"}</p>
+<p>Figure 32 - Entering a comment following a data change</p>
+<p>We distinguish several different validation states by looking at the
+cells of the table:</p>
+<ul>
+<li>
+<p>The value is black (thin): invalid data</p>
+</li>
+<li>
+<p>The value is purple: data validated technically</p>
+</li>
+<li>
+<p>The value is blue: data validated environmentally</p>
+</li>
+<li>
+<p>The value is black (bold): <strong>validated data</strong> <strong>(technical +
+    environmental)</strong></p>
+</li>
+</ul>
+<h3 id="toolbar-features">Toolbar features</h3>
+<p>Some new features appear in general tool bar and table tool bar.</p>
+<h4 id="general-tool-bar">General tool bar</h4>
+<p>+----------------------------------------------------------+-----------+
+| <strong>FLD acquisition</strong>, requests a data FLD acquisition to  | <img alt="" src="medi  |
+| acquisition system                                       | a/image10 |
+|                                                          | 8.png" />{wi |
+|                                                          | dth="0.25 |
+|                                                          | 010061242 |
+|                                                          | 344706in" |
+|                                                          | heig      |
+|                                                          | ht="0.250 |
+|                                                          | 100612423 |
+|                                                          | 44706in"} |
++==========================================================+===========+
+| <strong>Forcing</strong> a quality code, a drift code or an invalid   | <img alt="" src="medi  |
+| code over a selection                                    | a/image10 |
+|                                                          | 9.png" />{wi |
+|                                                          | dth="0.46 |
+|                                                          | 893919510 |
+|                                                          | 061244in" |
+|                                                          | heig      |
+|                                                          | ht="0.250 |
+|                                                          | 100612423 |
+|                                                          | 44706in"} |
++----------------------------------------------------------+-----------+
+| <strong>Apply</strong> a correction on selected data (cells)          | <img alt="" src="medi  |
+|                                                          | a/image11 |
+|                                                          | 0.png" />{wi |
+|                                                          | dth="0.25 |
+|                                                          | 010061242 |
+|                                                          | 344706in" |
+|                                                          | heig      |
+|                                                          | ht="0.250 |
+|                                                          | 100612423 |
+|                                                          | 44706in"} |
++----------------------------------------------------------+-----------+
+| <strong>Return</strong> to the state before last change (function     | <img alt="" src="medi  |
+| undo" />                                                    | a/image11 |
+|                                                          | 1.png){wi |
+|                                                          | dth="0.25 |
+|                                                          | 010061242 |
+|                                                          | 344706in" |
+|                                                          | heig      |
+|                                                          | ht="0.250 |
+|                                                          | 100612423 |
+|                                                          | 44706in"} |
++----------------------------------------------------------+-----------+
+| <strong>Restore</strong> data (values and QC) as they were acquired   | <img alt="" src="medi  |
+|                                                          | a/image11 |
+|                                                          | 2.png" />{wi |
+|                                                          | dth="0.25 |
+|                                                          | 010061242 |
+|                                                          | 344706in" |
+|                                                          | heig      |
+|                                                          | ht="0.250 |
+|                                                          | 100612423 |
+|                                                          | 44706in"} |
++----------------------------------------------------------+-----------+
+| <strong>Save</strong> changes (without validation).                   | <img alt="" src="med   |
+|                                                          | ia/image1 |
+| The counter indicates the number of ongoing changes      | 13.png" />{w |
+|                                                          | idth="0.4 |
+|                                                          | 272561242 |
+|                                                          | 344707in" |
+|                                                          | heig      |
+|                                                          | ht="0.250 |
+|                                                          | 100612423 |
+|                                                          | 44706in"} |
++----------------------------------------------------------+-----------+
+| <strong>Save</strong> and <strong>validate</strong> (entering a new validation     | <img alt="" src="med   |
+| date" />. The counter indicates the number of locked        | ia/image1 |
+| measures                                                 | 14.png){w |
+|                                                          | idth="0.4 |
+|                                                          | 272561242 |
+|                                                          | 344707in" |
+|                                                          | heig      |
+|                                                          | ht="0.250 |
+|                                                          | 100612423 |
+|                                                          | 44706in"} |
++----------------------------------------------------------+-----------+</p>
+<h4 id="table-tool-bar">Table tool bar</h4>
+<hr />
+<p>Show quality code changes compared to raw data              <img alt="" src="media/image115.png" />{width="0.25010061242344706in"
+                                                              height="0.25010061242344706in"}</p>
+<hr />
+<p><strong>Accept</strong> a modification made by the automatic validation  <img alt="" src="media/image116.png" />{width="0.25010061242344706in"
+  program (raw data replacement)                              height="0.25010061242344706in"}</p>
+<p><strong>Refuse</strong> a modification made by the automatic validation  <img alt="" src="media/image117.png" />{width="0.25010061242344706in"
+  program (restore raw data)                                  height="0.25010061242344706in"}</p>
+<p><strong>Reach</strong> the previous modification made by the automatic   <img alt="" src="media/image118.png" />{width="0.25010061242344706in"
+  validation program                                          height="0.25010061242344706in"}</p>
+<p><strong>Reach</strong> the next modification made by the automatic       <img alt="" src="media/image119.png" />{width="0.25010061242344706in"
+  validation program                                          height="0.25010061242344706in"}</p>
+<hr />
+<h2 id="aqi-view-xr">AQI view [XR]</h2>
+<p>This view is accessible for the XR eWorkStation only.</p>
+<p>The « <strong>AQI</strong> » enables us to show the Air Quality Index for the
+selected measures (These AQI are edited in the <strong>Configuration</strong>
+domain).</p>
+<p><img alt="" height="3.65625in" src="media/image120.png" width="6.496527777777778in" /></p>
+<p>Figure 33 -- Air Quality Index Visualization</p>
+<p>On the left side (selection), you can chose the index you want to
+display and specify if the calculation is computed for a group of
+measure or a site.</p>
+<p>You must also select at least on group of measures and a calculation
+duration.</p>
+<p>Data are shown in the right side. From toolbar, it's possible to display
+only parameter pollutants or the global calculation. It is also possible
+to switch between the calculations of the <strong>hourly</strong> or <strong>daily</strong> index,
+with several time scales for the graph on the lower part.</p>
+<h1 id="configuration">Configuration</h1>
+<p>The « <strong>Configuration</strong> » domain is different depending on the product
+(XR or WEX).</p>
+<h2 id="menu_2">Menu</h2>
+<p>In the <strong>XR</strong> configuration menu, there are seven buttons:</p>
+<p>+---------------------------------------------+------------------------+
+| -   <strong>Sites:</strong> permits to configure         | <img alt="" src="medi               |
+|     measurement sites.                      | a/image121.png" />{width= |
+|                                             | "2.0075645231846018in" |
+|                                             | height="               |
+|                                             | 0.4863134295713036in"} |
++=============================================+========================+
+| -   <strong>Channels</strong>: permits to configure      | <img alt="" src="medi               |
+|     channels and related other menu.        | a/image122.png" />{width= |
+|                                             | "1.9969870953630797in" |
+|                                             | height="               |
+|                                             | 0.4754724409448819in"} |
++---------------------------------------------+------------------------+
+| -   <strong>Equipment</strong>: allows us to add         | <img alt="" src="medi               |
+|     equipment and configure equipment.      | a/image123.png" />{width= |
+|                                             | "1.9961373578302712in" |
+|                                             | height="               |
+|                                             | 0.4722747156605424in"} |
++---------------------------------------------+------------------------+
+| -   <strong>Reference data:</strong> permits to          | <img alt="" src="med                |
+|     configure all reference data.           | ia/image124.png" />{width |
+|                                             | ="2.026111111111111in" |
+|                                             | height="               |
+|                                             | 0.4737882764654418in"} |
++---------------------------------------------+------------------------+
+| -   <strong>Add ons:</strong> allows us to change        | <img alt="" src="me                 |
+|     settings of the Adval rules and edit    | dia/image125.png" />{widt |
+|     Air Quality Indexes (AQI).              | h="1.98626312335958in" |
+|                                             | height="0              |
+|                                             | .48558070866141734in"} |
++---------------------------------------------+------------------------+
+| -   <strong>Channel groups</strong>: permits to see      | <img alt="" src="medi               |
+|     channel networks and configure the      | a/image126.png" />{width= |
+|     Adval groups.                           | "1.9933147419072617in" |
+|                                             | height="0              |
+|                                             | .48532370953630793in"} |
++---------------------------------------------+------------------------+
+| -   <strong>Samplers</strong>: allows us to add sampling | <img alt="" src="medi               |
+|     sites and its Assigned methods and      | a/image127.png" />{width= |
+|     Analysis.                               | "2.0704286964129484in" |
+|                                             | height="               |
+|                                             | 0.4511001749781277in"} |
++---------------------------------------------+------------------------+
+|                                             |                        |
++---------------------------------------------+------------------------+</p>
+<p>+---------------------------------------------+------------------------+
+| In the <strong>WEX/XR energy</strong> configuration      |                        |
+| menu, there is a menu in Add ones for       |                        |
+| (Regulatory Control) with two               |                        |
+| possibilities:                              |                        |
++=============================================+========================+
+| -   <strong>RC Lines</strong> : displays the list of     | <img alt="" src="med                |
+|     defined regulatory controls             | ia/image128.png" />{width |
+|                                             | ="2.090069991251094in" |
+|                                             | height="               |
+|                                             | 0.4309744094488189in"} |
++---------------------------------------------+------------------------+
+| -   <strong>RC Groups</strong>: shows the list of        | <img alt="" src="medi               |
+|     configured groups and the associated    | a/image129.png" />{width= |
+|     items                                   | "2.0825721784776903in" |
+|                                             | height="               |
+|                                             | 0.4581244531933508in"} |
++---------------------------------------------+------------------------+</p>
+<h2 id="common-settings">Common settings</h2>
+<p>Here in each view you can see one <strong>common tool bar</strong>. It gathers list
+mode, record mode, map mode, add new, modify, delete, treatment and
+filter buttons.</p>
+<p>In list mode user can see limited information and can add/modify/delete
+more than one record at a time. Where as in record mode can see only one
+record with full information in advanced mode and next record can open
+by scroll.</p>
+<p><img alt="" src="media/image130.png" />{width="6.723208661417323in"
+height="0.37463910761154856in"}</p>
+<p>Figure 34 -- Common tool bar</p>
+<p>List of common tools:</p>
+<hr />
+<p><strong>List mode</strong> show list view.                           <img alt="" src="media/image131.png" />{width="0.41214457567804025in"
+                                                          height="0.33626640419947507in"}</p>
+<hr />
+<p><strong>Record mode</strong> show record view.                       <img alt="" src="media/image132.png" />{width="0.4067246281714786in"
+                                                          height="0.3191557305336833in"}</p>
+<p><strong>Map mode</strong> show map mode (only for few views).        <img alt="" src="media/image133.png" />{width="0.4069641294838145in"
+                                                          height="0.2782152230971129in"}</p>
+<p><strong>Modify</strong> allows us to modify the records.             <img alt="" src="media/image134.png" />{width="0.3923151793525809in"
+                                                          height="0.29225721784776904in"}</p>
+<p><strong>New</strong> records can be add.                             <img alt="" src="media/image135.png" />{width="0.36481517935258095in"
+                                                          height="0.29595144356955383in"}</p>
+<p><strong>Delete</strong> the records.                                 <img alt="" src="media/image136.png" />{width="0.3645833333333333in"
+                                                          height="0.3020833333333333in"}</p>
+<p><strong>Treatment</strong> button allows access to other treatment   <img alt="" src="media/image137.png" />{width="0.3598425196850394in"
+  on each view.                                           height="0.2725229658792651in"}</p>
+<p><strong>Filter</strong> records in list mode.                        <img alt="" src="media/image138.png" />{width="0.35743547681539806in"
+                                                          height="0.30497484689413823in"}</p>
+<hr />
+<h3 id="sites">Sites</h3>
+<p>This screen permits to visualize and
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/configuration.htm">configure</a>
+the description of each Measurement Site.</p>
+<p>The information about elements assigned to a Measurement Site (devices,
+virtual channels, clocks, site failures...) are readable through the
+site record mode.</p>
+<p>This screen gives access to various kind of sites:</p>
+<ul>
+<li>
+<p>Measurement Sites:</p>
+<ul>
+<li>Permanent Measurement Site: unmoving site of the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Reseaux/res_surv.htm">Monitoring
+    network</a>.</li>
+</ul>
+<p><code>{=html}
+&lt;!-- --&gt;</code>
+-   Campaign Measurement Site: one shot site used during a
+    &gt; <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Reseaux/campagnes_mes.htm">Measurement
+    &gt; campaign</a>.
+    &gt; During the measurement campaign, a <a href="javascript:void(0);">Mobile
+    &gt; way</a>Truck or lorry (thus mobile) for
+    &gt; specific measurement on a Site. is assigned to this site. The
+    &gt; data of the Mobile way is integrated into data base and
+    &gt; assigned to the Campaign Measurement Site. Over this kind of
+    &gt; site, only location may be modified. The other information may
+    &gt; only be changed from the Mobile way (automatic repercussion).</p>
+<p><code>{=html}
+&lt;!-- --&gt;</code>
+-   Mobile way: A Mobile way is usable only if it is assigned to a
+    measurement campaign. During data acquisition from the Mobile
+    way, data are assigned to the campaign site and not to the
+    Mobile way. If the Mobile way is assigned to a campaign site,
+    the site configuration is modifiable but new Channels cannot be
+    created.</p>
+</li>
+</ul>
+<p><img alt="" src="media/image139.png" />{width="6.300694444444445in"
+height="3.120833333333333in"}</p>
+<p>Figure 35 -- List view of sites</p>
+<p><img alt="" height="7.9in" src="media/image140.png" width="6.3in" /></p>
+<p>Figure 36 -- Record view of sites</p>
+<h4 id="clocks">Clocks</h4>
+<p>This screens defines a virtual clock. A clock may be used to build a
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/conditions_logiques.htm">Logical
+Condition</a><em>.</em></p>
+<p>Up to 16 clocks may be defined per <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Appel_spontane.htm">acquisition
+system</a>
+of <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Site_de_mesures.htm">Measurement
+Site</a>.</p>
+<p><img alt="" src="media/image141.png" />{width="6.250143263342082in"
+height="1.83666447944007in"}</p>
+<p>Figure 37 -- List view of clocks</p>
+<p><img alt="" src="media/image142.png" />{width="6.29325678040245in"
+height="2.466474190726159in"}</p>
+<p>Figure 38 -- Record view of clocks</p>
+<h4 id="customized-actions">Customized actions</h4>
+<p>This screens permits to visualize and
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/configuration.htm">configure</a>
+the description of one customized actions.</p>
+<p>Up to 32 customized actions per <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Site_de_mesures.htm">Measurement
+Site</a>
+may be defined. This customized actions may be used to parameter a
+condition. Only a eWKS may change the customized actions state by
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Gestech/etat_sta/etat_station_telecommande_bit.htm">sending a
+command</a>
+to the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition
+system</a>.</p>
+<p><img alt="" src="media/image143.png" />{width="6.300694444444445in"
+height="1.8736111111111111in"}</p>
+<p>Figure 39 -- List view of customized actions</p>
+<p><img alt="" src="media/image144.png" />{width="6.300694444444445in"
+height="3.060416666666667in"}</p>
+<p>Figure 40 -- Record view of customized actions</p>
+<h4 id="site-failures">Site failures</h4>
+<p>This interface define the measurement site failures or the Bay failures.</p>
+<p>A Measurement Site failure is the association made between a <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/cartes_elechtm.htm">Digital
+input</a>
+of the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition
+system</a>
+and a failure. The generic failure is itself associated to 2
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Event/evenements.htm">events</a>
+of rising and falling failure. A site failure is a failure associated
+with a site.</p>
+<p><img alt="" src="media/image145.png" />{width="6.300694444444445in"
+height="1.6513888888888888in"} Figure 41 -- List view of site failures</p>
+<p><img alt="" src="media/image146.png" />{width="6.300694444444445in"
+height="3.9583333333333335in"}</p>
+<p>Figure 42 --Record view of site failures</p>
+<h4 id="opc-servers">OPC Servers</h4>
+<p>This screen permits to configure OPC servers. Only one OPC server allows
+us to configure per measurement site.</p>
+<p><img alt="" src="media/image147.png" />{width="6.300694444444445in"
+height="1.1555555555555554in"}</p>
+<p>Figure 43 --OPC Server view</p>
+<h4 id="applicom-card">Applicom card</h4>
+<p>This screen permits to configure Applicom card. Only one card allow us
+to configure per measurement site.</p>
+<p><img alt="" src="media/image148.png" />{width="6.300694444444445in"
+height="1.0763888888888888in"}</p>
+<p>Figure 44 --Applicom card view</p>
+<h4 id="logical-conditions">Logical conditions</h4>
+<p>This screen allow us to configure logical conditions.Logical Conditions
+are logical calculations carried out by the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition
+system</a>.</p>
+<p>A logical calculation is done using acquisition systems and
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Mesures/mesures.htm">Channels</a>
+states. It is carried out each second in order to control a digital
+output (digital command or relay).A supplementary level named
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/etat_intermediaire.htm">intermediate
+states</a>
+gives way to establish multiple combinations. The various logical
+combinations are configured in the acquisition system.</p>
+<p>The resulting logical output actions may be:</p>
+<ul>
+<li>digital command of an analyzer (to the selected Channel);</li>
+</ul>
+<pre><code>&lt;!-- --&gt;
+</code></pre>
+<ul>
+<li>relay output command;</li>
+</ul>
+<pre><code>&lt;!-- --&gt;
+</code></pre>
+<ul>
+<li>logical command to set all samples of the selected Channel in the
+    current <a href="javascript:void(0);">basic time step</a>time step for data
+    acquisition in XR: half an hour or fifteen minutes. In France it is
+    acted to be fifteen minutes. We also say P2 period. as
+    <a href="javascript:void(0);">\'remarkable\'</a>set to FLD data to mark data to
+    be further examined at a later time.</li>
+</ul>
+<p>Logical Conditions are inputs for <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/etat_intermediaire.htm">intermediate
+states</a>.</p>
+<p><img alt="" src="media/image149.png" />{width="6.300694444444445in"
+height="2.0756944444444443in"}</p>
+<p>Figure 45 --List view of logical conditions</p>
+<p><img alt="" height="4.11875in" src="media/image150.png" width="6.300694444444445in" /></p>
+<p>Figure 46 --Record view of logical conditions</p>
+<h4 id="intermidiate-states">Intermidiate states</h4>
+<p>Intermediate States are logical calculations carried out by the
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition
+system</a>.</p>
+<p><img alt="" src="media/image151.png" />{width="6.300694444444445in"
+height="2.0791666666666666in"}</p>
+<p>Figure 47 -- List view of intermidiate states</p>
+<p><img alt="" src="media/image152.png" />{width="6.300694444444445in"
+height="4.0881944444444445in"}</p>
+<p>Figure 48 --Record mode of intermidiate states</p>
+<h4 id="digital-output">Digital output</h4>
+<p>Digital Outputs are logical calculations carried out by the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition
+system</a>.
+This screen permits to configure digital outputs.</p>
+<p><img alt="" src="media/image153.png" />{width="6.300694444444445in"
+height="2.0652777777777778in"}</p>
+<p>Figure 49 --List view of digital output</p>
+<p><img alt="" src="media/image154.png" />{width="6.300694444444445in"
+height="4.136111111111111in"}</p>
+<p>Figure 50 --Record mode of digital output</p>
+<h3 id="channels">Channels</h3>
+<p>This interface is usefull to configure various types of channels that
+represents the pollutant or any parameter measured by a device.</p>
+<p><img alt="" src="media/image155.png" />{width="6.2887609361329835in"
+height="4.945475721784777in"}</p>
+<p>Figure 51 --List view of channels</p>
+<p><img alt="" src="media/image156.png" />{width="6.297916666666667in"
+height="8.880597112860892in"}</p>
+<p>Figure 52 --Record view of channels</p>
+<h4 id="channel-alarms">Channel alarms</h4>
+<p>This tab permits the definition of Alarms are states of the Channel,
+that don\'t influence the quality codes of data, even if they are
+active.</p>
+<p><img alt="" src="media/image157.png" />{width="6.300694444444445in"
+height="3.529166666666667in"}</p>
+<p>Figure 53 -- List view of channel alarms</p>
+<p><img alt="" src="media/image158.png" />{width="6.300694444444445in"
+height="3.063888888888889in"}</p>
+<p>Figure 54 -- Record view of channel alarms</p>
+<h4 id="channel-failures">Channel failures</h4>
+<p>This tab permits the definition of Failures are states of the
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Mesures/mesures.htm">Channel</a>
+(resulting from tests), they assign to the FLD the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Racine/codes_qualite.htm#D">\'D\' quality
+code</a>,
+if they are active.</p>
+<p><img alt="" src="media/image159.png" />{width="6.300694444444445in"
+height="2.8805555555555555in"}</p>
+<p>Figure 55 -- List view of chanel faliures</p>
+<p><img alt="" src="media/image160.png" />{width="6.300694444444445in"
+height="2.9868055555555557in"} Figure 56 -- Record view of channel
+failures</p>
+<h4 id="calibration-profile">Calibration profile</h4>
+<p>A calibration profile is a set of parameters that permits to the
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition
+system</a>
+to automatically command the calibration phases of a
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Mesures/mesures.htm">Channel</a>.</p>
+<p>In this screen it is possible to define various calibration profiles for
+each Channel.</p>
+<p>Note that in the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/explorateur_configuration.htm">configuration
+explorer</a>,
+a <em><a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Mesures/sorties_calibrage.htm">Calibration
+output</a>
+heading</em> is created under each calibration definition<em>. This heading
+defines the command part of the calibrations: it must absolutely be
+defined</em> (not empty) to avoid refusal of the calibration configuration
+by the acquisition system</p>
+<p><img alt="" src="media/image161.png" />{width="6.384325240594926in"
+height="3.1190080927384076in"} Figure 57 -- List view of calibration
+profile</p>
+<p><img alt="" src="media/image162.png" />{width="6.298507217847769in"
+height="5.80051946631671in"} Figure 58 -- Record view of calibration
+profile</p>
+<h3 id="equipments">Equipments</h3>
+<h4 id="equipment-defined">Equipment defined</h4>
+<p>This screens permits to define a Device Type that may be
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/appareils_affectes.htm">assigned</a>
+to <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Site_de_mesures.htm">Measurement
+Sites</a>.</p>
+<p><img alt="" src="media/image163.png" />{width="6.300694444444445in"
+height="3.1680555555555556in"} Figure 59 -- List view of equipment
+defined</p>
+<p><img alt="" src="media/image164.png" />{width="6.300694444444445in"
+height="3.966666666666667in"} Figure 60 -- Record view of equipment
+defined</p>
+<h4 id="assigned-equipment">Assigned equipment</h4>
+<p>This page characterises a device (analyzer, sensor... of a particular
+model) to assign it to a <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Site_de_mesures.htm">Measurement
+Site</a>.</p>
+<p><img alt="" src="media/image165.png" />{width="6.288968722659668in"
+height="3.0278958880139983in"}</p>
+<p>Figure 61 -- List view of assigned equipment</p>
+<p><img alt="" src="media/image166.png" />{width="6.155182633420822in"
+height="3.578791557305337in"}</p>
+<p>Figure 62 -- Record view of assigned equipment</p>
+<h3 id="reference-data">Reference data</h3>
+<p>The configuration of the reference data allows us to parametrize some
+elements of the workstation and the server like acquisition systems,
+analysis method, city, department, equipment type, events, parameters
+etc. to describe the site, channels, channel groups, assigned equipment.</p>
+<p><img alt="" src="media/image167.png" />{width="6.300694444444445in"
+height="3.0680555555555555in"} Figure 63 -- Reference data</p>
+<p>List of Reference data:</p>
+<p>+----------------------+-----------------------------------------------+
+| <strong>Acquisition        | The application is compatible with various    |
+| systems</strong>            | types of Acquisition System. This screens     |
+|                      | permits to define them to let the system know |
+|                      | about. The configuration for a new            |
+|                      | Acquisition System must be carried out by     |
+|                      | <a href="http://www.iseo.fr">Iséo</a>.                   |
++======================+===============================================+
+| <strong>Analysis method</strong>  | This is for naming the Analysis methods used  |
+|                      | by for <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN |
+|                      | .chm::/Configuration/Appareils/appareils.htm">device                                |
+|                      | type                                          |
+|                      | s</a> |
+|                      | or for                                        |
+|                      | <a href="mk:@MSIT                           |
+|                      | Store:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Gest |
+|                      | ech/saisie_manuelle_donnees_asynchrones.htm">analysis</a>. |
++----------------------+-----------------------------------------------+
+| <strong>City and           | Both screens allow us to create new city and  |
+| Department</strong>         | department respectively.                      |
++----------------------+-----------------------------------------------+
+| <strong>Electronic card</strong>  | This defines the electronic cards used with   |
+|                      | this type of <a href="mk:@MSI                               |
+|                      | TStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Con |
+|                      | figuration/Defbase/systemes_acquisition.htm">Acquisition                     |
+|                      | system</a>. |
++----------------------+-----------------------------------------------+
+| <strong>Equipment family</strong> | A device family is used to group              |
+|                      | <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN |
+|                      | .chm::/Configuration/Appareils/appareils.htm">device                                       |
+|                      | s</a> |
+|                      | by family. It allows us to reduce device list |
+|                      | shown during changing allocation. Each family |
+|                      | is composed by equipment measuring the same   |
+|                      | <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpE |
+|                      | N.chm::/Configuration/Defbase/Parametre.htm">paramete                                     |
+|                      | rs</a>. |
++----------------------+-----------------------------------------------+
+| <strong>Equipment type</strong>   | This screens permits to define a device model |
+|                      | that may be                                   |
+|                      | <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpE |
+|                      | N.chm::/Configuration/appareils_affectes.htm">assign                                       |
+|                      | ed</a> |
+|                      | to <a href="mk                                     |
+|                      | :@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm: |
+|                      | :/Configuration/Station/Site_de_mesures.htm">Measurement                               |
+|                      | Sites</a>. |
++----------------------+-----------------------------------------------+
+| <strong>Event categories</strong> | This screen permits to define                 |
+|                      | <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\Hel |
+|                      | pEN.chm::/Configuration/Event/evenements.htm">ev                                           |
+|                      | ents</a> |
+|                      | categories used in the application.           |
++----------------------+-----------------------------------------------+
+| <strong>Extraction         | Here are defined the various extraction       |
+| method</strong>             | methods to be used in                         |
+|                      | <a href="mk:@MSITStor                       |
+|                      | e:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Gest |
+|                      | ech/saisie_manuelle_donnees_asynchrones.htm">Sampling</a>. |
++----------------------+-----------------------------------------------+
+| <strong>Laboratory</strong>       | This permits the visualisation and the        |
+|                      | <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\ |
+|                      | HelpEN.chm::/Configuration/configuration.htm">config                                       |
+|                      | uration</a> |
+|                      | of the description of each Analysis           |
+|                      | Laboratory furnisher of the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\Help |
+|                      | EN.chm::/Configuration/Reseaux/res_surv.htm">Monitoring       |
+|                      | netw                                          |
+|                      | ork</a>. |
++----------------------+-----------------------------------------------+
+| <strong>Metadata</strong>:        | Here are described metadata used to describe  |
+| Economic sector,     | the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\Hel |
+| site class ,Network  | pEN.chm::/Configuration/Reseaux/res_surv.htm">Monitoring                               |
+| Economic sector      | Net                                           |
+| type, Measurement    | work</a> |
+| type,                | and the <a href="mk                                     |
+| Measurement site     | :@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm: |
+| function type,       | :/Configuration/Station/Site_de_mesures.htm">Measurement                          |
+|                      | sites</a>. |
+| Measurement site     |                                               |
+| objectives,          |                                               |
+|                      |                                               |
+| Sector types ,       |                                               |
+|                      |                                               |
+| National activity    |                                               |
+| zone ,               |                                               |
+|                      |                                               |
+| Economic sectors ,   |                                               |
+|                      |                                               |
+| Traffic lane types   |                                               |
+| ,Location type,      |                                               |
+|                      |                                               |
+| Sampler type place,  |                                               |
+| Sampling method,     |                                               |
+| Zone type.           |                                               |
++----------------------+-----------------------------------------------+
+| <strong>Parameters</strong>       | Here are defined all physical parameters that |
+|                      | the application uses: pollutants,             |
+|                      | meteorological data, and physiques measures.  |
++----------------------+-----------------------------------------------+
+| <strong>Unit</strong>             | Here are defined                              |
+|                      | <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\Help |
+|                      | EN.chm::/Configuration/Defbase/Parametre.htm">paramet                                      |
+|                      | ers</a> |
+|                      | units used by the application.                |
++----------------------+-----------------------------------------------+</p>
+<h3 id="channel-groups">Channel groups</h3>
+<p>The channel group is a central concept of the module. It permits to
+build sets of
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Mesures/mesures.htm">channels</a>
+in an explicit way, according to the criteria of the operator, as for
+instance the set of Channels that belong to:</p>
+<ul>
+<li>the same pollutant;</li>
+</ul>
+<pre><code>&lt;!-- --&gt;
+</code></pre>
+<ul>
+<li>the same Measurement Site;</li>
+</ul>
+<pre><code>&lt;!-- --&gt;
+</code></pre>
+<ul>
+<li>the same city;</li>
+</ul>
+<pre><code>&lt;!-- --&gt;
+</code></pre>
+<ul>
+<li>the Measurement sites managed by the operator;</li>
+</ul>
+<p><img alt="" src="media/image168.png" />{width="6.268964348206474in"
+height="2.3124639107611547in"}</p>
+<p>Figure 64 -- List view of channel groups</p>
+<p><img alt="" src="media/image169.png" />{width="6.294055118110236in"
+height="5.636363735783027in"}</p>
+<p>Figure 65 -- Record view of channel groups</p>
+<h3 id="samplers">Samplers</h3>
+<p>The information about sampling sites and elements assigned to a sampling
+site (<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Methodes_attribuees.htm">assigned
+methods</a>,
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/analyses.htm">analysis</a>)
+are readable browsing through this
+menu<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/site_mesure_arbo.htm">mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/site_mesure_arbo.htm</a>.</p>
+<p>The configuration of the sampling sites is much easier than for
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Site_de_mesures.htm">Measurement
+Sites</a>.
+The only data to be entered are:</p>
+<ul>
+<li>sampling site location;</li>
+</ul>
+<pre><code>&lt;!-- --&gt;
+</code></pre>
+<ul>
+<li>sampling
+    <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Methodes_attribuees.htm">methods</a>;</li>
+</ul>
+<pre><code>&lt;!-- --&gt;
+</code></pre>
+<ul>
+<li><a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/analyses.htm">analysis</a>
+    conducted over each method.</li>
+</ul>
+<h4 id="sampling-sites">Sampling sites</h4>
+<p>This screen permits to visualize and
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/configuration.htm">configure</a>
+the description of each sampling site.</p>
+<p>There are two types of sampling sites:</p>
+<p>• <strong>Permanent Sampling site</strong>: fixed site of the monitoring network
+where analyses are carried out periodically outside the measurement
+campaign;</p>
+<p>• <strong>Campaign Sampling Site:</strong> site used occasionally for a campaign. A
+site can be used by another subsequent campaign.</p>
+<p><img alt="" src="media/image170.png" />{width="6.300694444444445in"
+height="2.2645833333333334in"}</p>
+<p>Figure 66 --List view of sampling sites</p>
+<p><img alt="" src="media/image171.png" />{width="6.298611111111111in"
+height="4.776388888888889in"}</p>
+<p>Figure 67 --Record view of sampling sites</p>
+<h4 id="assigned-method">Assigned method</h4>
+<p>This screens enables the visualisation and the
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/configuration.htm">configuration</a>
+of the method assigned to the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/site_de_prelevement.htm">sampling
+site</a>.</p>
+<p>To each method is thereafter assigned an
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/analyses.htm">analysis</a>.</p>
+<p><img alt="" src="media/image172.png" />{width="6.300694444444445in"
+height="3.2381944444444444in"} Figure 68 --List view of assigned methods</p>
+<h4 id="analysis">Analysis</h4>
+<p>This screens enables the visualisation and the
+<a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/configuration.htm">configuration</a>
+of the analysis conducted on the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/site_de_prelevement.htm">sampling
+site</a>
+with the <a href="mk:@MSITStore:D:\INSTALLED\iseo\WKS\HelpEN.chm::/Configuration/Station/Methodes_attribuees.htm">assigned
+Method</a>,
+before the entry of data.</p>
+<p><img alt="" src="media/image173.png" />{width="6.300694444444445in"
+height="3.754166666666667in"}</p>
+<p>Figure 69 --List view of analysis</p>
+<h2 id="xr-add-ons">XR add-ons</h2>
+<h3 id="adval">Adval</h3>
+<p>There is a full documentation about how use Adval and Adval groups.</p>
+<h4 id="adval-rules">Adval rules</h4>
+<p>This screen permits to create new automatic validation (Adval) rules,
+which can be apply on adval groups.</p>
+<p><img alt="" height="5.95625in" src="media/image174.png" width="6.300694444444445in" /></p>
+<p>Figure 70 -- List view of adval rules</p>
+<p><img alt="" height="4.6375in" src="media/image175.png" width="6.300694444444445in" />
+Figure 71 -- Record view of adval rules</p>
+<h4 id="adval-groups">Adval groups</h4>
+<p>The view of groups for \"measure group\". It allows you to consult the
+\"channel networks\" existing in the database. You can also configure
+measure group used in automatic validation rules (Adval).</p>
+<p><img alt="" src="media/image176.png" />{width="6.300694444444445in"
+height="2.834722222222222in"} Figure 72 -- List view of adval groups</p>
+<p><img alt="" src="media/image177.png" />{width="6.300694444444445in"
+height="4.048611111111111in"}</p>
+<p>Figure 73 -- Record view of adval group</p>
+<h4 id="air-quality-index">Air quality index</h4>
+<p>In this part, it is possible to view and configure Air Quality Indexes
+(AQI). These AQI will be used in the « <strong>Data Management</strong> » domain (in
+the AQI tab).</p>
+<p>There is a full documentation about how use AQI.</p>
+<p><img alt="" src="media/image178.png" />{width="6.300694444444445in"
+height="4.477083333333334in"}</p>
+<p>Figure 74 -- Air quality index view</p>
+<h2 id="wex-xr-energy-add-ons">WEX /XR energy add-ons</h2>
+<hr />
+<p>In the <strong>WEX/XR energy</strong> configuration menu, there is a button
+  (Regulatory Control). This screen permits to configure RC lines and RC
+  groups.</p>
+<hr />
+<hr />
+<p>A full documentation describes how Regulatory Controls works.</p>
+<h3 id="regulatory-control">Regulatory control</h3>
+<h4 id="regulatory-control-line-view">Regulatory control line view</h4>
+<p><img alt="" src="media/image179.png" />{width="6.131402012248469in"
+height="3.7789698162729657in"}</p>
+<p>Figure 75 -- Regulatory Control Lines visualization</p>
+<h4 id="regulatory-control-groups-view">Regulatory control groups view</h4>
+<p><img alt="" src="media/image180.png" />{width="6.228974190726159in"
+height="3.892396106736658in"}</p>
+<p>Figure 76 -- Regulatory Control Groups Visualization</p>
+<h1 id="administration">Administration</h1>
+<h2 id="menu_3">Menu</h2>
+<p>The menu of the Administration section has three buttons:</p>
+<p>+---------------------------------------------+------------------------+
+| -   <strong>Users:</strong> displays the list of user    | <img alt="" src="medi               |
+|     profiles with user names and their      | a/image181.png" />{width= |
+|     role.                                   | "2.0737543744531934in" |
+|                                             | height="0              |
+|                                             | .46893919510061244in"} |
++=============================================+========================+
+| -   <strong>Roles</strong>: shows up the list of         | <img alt="" src="medi               |
+|     existing roles with their related       | a/image182.png" />{width= |
+|     rights.                                 | "2.0737543744531934in" |
+|                                             | height="0              |
+|                                             | .46893919510061244in"} |
++---------------------------------------------+------------------------+
+| -   <strong>Workgroups:</strong> It is possible to       | <img alt="" src="med                |
+|     create workgroups using site,           | ia/image183.png" />{width |
+|     parameters, channels, equipment         | ="2.136793525809274in" |
+|     types<strong>.</strong>                              | height="               |
+|                                             | 0.4458245844269466in"} |
++---------------------------------------------+------------------------+</p>
+<h2 id="users-view">Users view</h2>
+<p>The « <strong>Users</strong> » view, gives us a recap of what are the existing user
+types with the detail (name and role). These user profiles can be
+added/edited/deleted here. It is possible to apply the credentials
+(access, configuration, data validation) of created workgroups in
+<img alt="" src="media/image184.png" />{width="0.2910444006999125in"
+height="0.2979199475065617in"}<strong>Workgroups.</strong></p>
+<p>Default access workgroup can be possible to set for each user</p>
+<p><img alt="" src="media/image185.png" />{width="6.300694444444445in"
+height="3.1256944444444446in"}</p>
+<p>Figure 77 -- List of user profiles</p>
+<p><img alt="" src="media/image186.png" />{width="6.295833333333333in"
+height="6.608333333333333in"}</p>
+<p>Figure 78 -- Record mode of user profiles</p>
+<h2 id="roles-view">Roles view</h2>
+<p>The « <strong>Roles</strong> » view lists every roles that are associated with a user
+profile, and the corresponding rights of this role.</p>
+<p><img alt="" src="media/image187.png" />{width="6.300694444444445in"
+height="3.145138888888889in"}</p>
+<p>Figure 79 -- Display of user roles and their rights</p>
+<p><img alt="" src="media/image188.png" />{width="6.255813648293963in"
+height="9.09127077865267in"}</p>
+<p>Figure 80 -- Record mode of user roles and their rights</p>
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+    
+  </body>
+</html>

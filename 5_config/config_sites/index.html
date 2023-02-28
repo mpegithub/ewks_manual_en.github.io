@@ -1,0 +1,1491 @@
+<!-- Adding a PDF button to mkdocs-material theme
+https://timvink.github.io/mkdocs-print-site-plugin/how-to/pdf_button.html#adding-a-pdf-button-to-mkdocs-material-theme -->
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="...">
+      
+      
+        <meta name="author" content="Envea Bidart">
+      
+      
+      
+        <link rel="prev" href="../common_settings/">
+      
+      
+        <link rel="next" href="../config_channels/">
+      
+      <link rel="icon" href="../../assets/img/XR_32.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>Sites - eWorkstation Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sites" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="eWorkstation Manual" class="md-header__button md-logo" aria-label="eWorkstation Manual" data-md-component="logo">
+      
+  <img src="../../assets/img/XR_32.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eWorkstation Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sites
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../1_introduction/read_before_use/" class="md-tabs__link">
+        Introduction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../3_dashboard/dashboard_intro/" class="md-tabs__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../4_data/data_intro/" class="md-tabs__link">
+        Data management
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../config_intro/" class="md-tabs__link md-tabs__link--active">
+        Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../6_admin/admin_intro/" class="md-tabs__link">
+        Administration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../print_page/" class="md-tabs__link">
+      Print Site
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="eWorkstation Manual" class="md-nav__button md-logo" aria-label="eWorkstation Manual" data-md-component="logo">
+      
+  <img src="../../assets/img/XR_32.png" alt="logo">
+
+    </a>
+    eWorkstation Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1_introduction/read_before_use/" class="md-nav__link">
+        Read before use
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_navigation/domains/" class="md-nav__link">
+        Domains
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          Navigation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Navigation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_navigation/common/" class="md-nav__link">
+        Common features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_navigation/top_menu/" class="md-nav__link">
+        Top menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_navigation/left_menu/" class="md-nav__link">
+        Left menu
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Dashboard
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Dashboard
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_dashboard/dashboard_intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_dashboard/sites_status/" class="md-nav__link">
+        Sites status
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_dashboard/pollutants_status/" class="md-nav__link">
+        Pollutants status
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Data management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/data_intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Consultation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Consultation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/data_selection/" class="md-nav__link">
+        Data selection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/data_consultation/" class="md-nav__link">
+        Data consultation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/fld_visualization/" class="md-nav__link">
+        FLD visualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/calibration_profile/" class="md-nav__link">
+        Calibration profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/wind_rose/" class="md-nav__link">
+        Wind rose
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Validation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Validation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/validation_expertise_level/" class="md-nav__link">
+        Expertise level
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/validation_measure_lock/" class="md-nav__link">
+        Measure locking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_data/validation_toolbar/" class="md-nav__link">
+        Toolbar features
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common_settings/" class="md-nav__link">
+        Common settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sites
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Sites
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clocks" class="md-nav__link">
+    Clocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customized-actions" class="md-nav__link">
+    Customized actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-failures" class="md-nav__link">
+    Site failures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opc-servers" class="md-nav__link">
+    OPC Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicom-card" class="md-nav__link">
+    Applicom card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-conditions" class="md-nav__link">
+    Logical conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermidiate-states" class="md-nav__link">
+    Intermidiate states
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-output" class="md-nav__link">
+    Digital output
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_channels/" class="md-nav__link">
+        Channels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_equipments/" class="md-nav__link">
+        Equipments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_ref_data/" class="md-nav__link">
+        Reference data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_channel_groups/" class="md-nav__link">
+        Channel groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_samplers/" class="md-nav__link">
+        Samplers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          XR add-ons
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          XR add-ons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_aqi/" class="md-nav__link">
+        Air Quality Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_adval/" class="md-nav__link">
+        Adval
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          WEX, XR energy add-ons
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          WEX, XR energy add-ons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_reg_cfg/" class="md-nav__link">
+        Regulatory control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_periods/" class="md-nav__link">
+        Test periods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Administration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6_admin/admin_intro/" class="md-nav__link">
+        Administration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6_admin/users/" class="md-nav__link">
+        Users view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6_admin/roles/" class="md-nav__link">
+        Roles view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6_admin/workgroups/" class="md-nav__link">
+        Workgroups
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print_page/" class="md-nav__link">
+        Print Site
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clocks" class="md-nav__link">
+    Clocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customized-actions" class="md-nav__link">
+    Customized actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-failures" class="md-nav__link">
+    Site failures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opc-servers" class="md-nav__link">
+    OPC Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applicom-card" class="md-nav__link">
+    Applicom card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-conditions" class="md-nav__link">
+    Logical conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermidiate-states" class="md-nav__link">
+    Intermidiate states
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-output" class="md-nav__link">
+    Digital output
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+    <a href="../../print_page/" title="Print Site" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6v4h12m1 5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m-3 7H8v-5h8m3-6H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3Z"/></svg>
+    </a>
+
+
+
+                  
+
+
+<h1 id="sites">Sites</h1>
+<p>This screen permits to visualize and <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/configuration.htm">configure</a> the description of each Measurement Site.</p>
+<p>The information about elements assigned to a Measurement Site (devices, virtual channels, clocks, site failures...) are readable through the site record mode.</p>
+<p>This screen gives access to various kind of sites:</p>
+<ul>
+<li>
+<p>Measurement Sites:</p>
+</li>
+<li>
+<p>Permanent Measurement Site: unmoving site of the <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Reseaux/res_surv.htm">Monitoring network</a>.</p>
+</li>
+<li>
+<p>Campaign Measurement Site: one shot site used during a <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Reseaux/campagnes_mes.htm">Measurement campaign</a>. During the measurement campaign, a <a href="javascript:void(0);">Mobile way</a>Truck or lorry (thus mobile) for specific measurement on a Site. is assigned to this site. The data of the Mobile way is integrated into data base and assigned to the Campaign Measurement Site. Over this kind of site, only location may be modified. The other information may only be changed from the Mobile way (automatic repercussion).</p>
+</li>
+<li>
+<p>Mobile way: A Mobile way is usable only if it is assigned to a measurement campaign. During data acquisition from the Mobile way, data are assigned to the campaign site and not to the Mobile way. If the Mobile way is assigned to a campaign site, the site configuration is modifiable but new Channels cannot be created.</p>
+</li>
+</ul>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_d3516b1b10354dda.png" /></p>
+<p>Figure 35 – List view of sites</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_bdd90a86f953a9b1.png" /></p>
+<p>Figure 36 – Record view of sites</p>
+<h2 id="clocks">Clocks</h2>
+<p>This screens defines a virtual clock. A clock may be used to build a <a href="mk:@MSITStore:D:%5C%5CINSTALLED%5C%5Ciseo%5C%5CWKS%5C%5CHelpEN.chm::/Configuration/Station/conditions_logiques.htm">Logical Condition</a><em>.</em></p>
+<p>Up to 16 clocks may be defined per <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/Appel_spontane.htm">acquisition system</a> of <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/Site_de_mesures.htm">Measurement Site</a>.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_b7f4857d343e5831.png" /></p>
+<p>Figure 37 – List view of clocks</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_2f9a724e7e82f8b.png" /></p>
+<p>Figure 38 – Record view of clocks</p>
+<h2 id="customized-actions">Customized actions</h2>
+<p>This screens permits to visualize and <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/configuration.htm">configure</a> the description of one customized actions.</p>
+<p>Up to 32 customized actions per <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/Site_de_mesures.htm">Measurement Site</a> may be defined. This customized actions may be used to parameter a condition. Only a eWKS may change the customized actions state by <a href="mk:@MSITStore:D:%5C%5CINSTALLED%5C%5Ciseo%5C%5CWKS%5C%5CHelpEN.chm::/Gestech/etat_sta/etat_station_telecommande_bit.htm">sending a command</a>to the <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition system</a>.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_6a10657215a85316.png" /></p>
+<p>Figure 39 – List view of customized actions</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_c525d243ac2a255e.png" /></p>
+<p>Figure 40 – Record view of customized actions</p>
+<h2 id="site-failures">Site failures</h2>
+<p>This interface define the measurement site failures or the Bay failures.</p>
+<p>A Measurement Site failure is the association made between a <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/cartes_elechtm.htm">Digital input</a> of the <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition system</a> and a failure. The generic failure is itself associated to 2 <a href="mk:@MSITStore:D:%5C%5CINSTALLED%5C%5Ciseo%5C%5CWKS%5C%5CHelpEN.chm::/Configuration/Event/evenements.htm">events</a> of rising and falling failure. A site failure is a failure associated with a site.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_33c6642d343c135d.png" />Figure 41 – List view of site failures</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_44144434a21ef5c9.png" /></p>
+<p>Figure 42 –Record view of site failures</p>
+<h2 id="opc-servers">OPC Servers</h2>
+<p>This screen permits to configure OPC servers. Only one OPC server allows us to configure per measurement site.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_1c8fa9c8c6071b1a.png" /></p>
+<p>Figure 43 –OPC Server view</p>
+<h2 id="applicom-card">Applicom card</h2>
+<p>This screen permits to configure Applicom card. Only one card allow us to configure per measurement site.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_ac35ff648c84be62.png" /></p>
+<p>Figure 44 –Applicom card view</p>
+<h2 id="logical-conditions">Logical conditions</h2>
+<p>This screen allow us to configure logical conditions.Logical Conditions are logical calculations carried out by the <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition system</a>.</p>
+<p>A logical calculation is done using acquisition systems and <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Mesures/mesures.htm">Channels</a> states. It is carried out each second in order to control a digital output (digital command or relay).A supplementary level named <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/etat_intermediaire.htm">intermediate states</a> gives way to establish multiple combinations. The various logical combinations are configured in the acquisition system.</p>
+<p>The resulting logical output actions may be:</p>
+<ul>
+<li>
+<p>digital command of an analyzer (to the selected Channel);</p>
+</li>
+<li>
+<p>relay output command;</p>
+</li>
+<li>
+<p>logical command to set all samples of the selected Channel in the current <a href="javascript:void(0);">basic time step</a>time step for data acquisition in XR: half an hour or fifteen minutes. In France it is acted to be fifteen minutes. We also say P2 period.as <a href="javascript:void(0);">'remarkable'</a>set to FLD data to mark data to be further examined at a later time.</p>
+</li>
+</ul>
+<p>Logical Conditions are inputs for <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/etat_intermediaire.htm">intermediate states</a>.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_4978340abb16886c.png" /></p>
+<p>Figure 45 –List view of logical conditions</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_9904ec5a4f1bc161.png" /></p>
+<p>Figure 46 –Record view of logical conditions</p>
+<h2 id="intermidiate-states">Intermidiate states</h2>
+<p>Intermediate States are logical calculations carried out by the <a href="mk:@MSITStore:D:%5CINSTALLED%5Ciseo%5CWKS%5CHelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition system</a>.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_3eda74720cdd37f4.png" /></p>
+<p>Figure 47 – List view of intermidiate states</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_be0ab061edae8340.png" /></p>
+<p>Figure 48 –Record mode of intermidiate states</p>
+<h2 id="digital-output">Digital output</h2>
+<p>Digital Outputs are logical calculations carried out by the <a href="mk:@MSITStore:D:%5C%5CINSTALLED%5C%5Ciseo%5C%5CWKS%5C%5CHelpEN.chm::/Configuration/Station/Systeme_acquisition.htm">acquisition system</a>. This screen permits to configure digital outputs.</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_b671cd2552063b21.png" /></p>
+<p>Figure 49 –List view of digital output</p>
+<p><img alt="" src="RackMultipart20230223-1-e3y3c1_html_9ff51ad030944314.png" /></p>
+<p>Figure 50 –Record mode of digital output</p>
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+    
+  </body>
+</html>
